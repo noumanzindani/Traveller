@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:slide_to_act/slide_to_act.dart';
+import 'package:traveller/model/trip.dart';
 import 'package:traveller/view/homeview.dart';
+import 'package:traveller/view/recipet.dart';
 
 class SlideToActWidget extends StatelessWidget {
-  const SlideToActWidget({super.key});
-
+  final Trip trip;
+   SlideToActWidget({required this.trip});
+  
   @override
   Widget build(BuildContext context) {
     return Builder(
       builder: (context) {
         final GlobalKey<SlideActionState> key = GlobalKey();
         return Padding(
-          padding:  EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(8.0),
           child: SlideAction(
             text: "Slide To Book",
             // textStyle: TextStyle(fontWeight: FontWeight.w800),
             textColor: Colors.white,
             innerColor: Colors.white,
             outerColor: Colors.blue[900],
-            sliderButtonIcon:  Icon(
+            sliderButtonIcon: Icon(
               Icons.arrow_forward,
               color: Colors.blue[900],
             ),
@@ -30,9 +33,7 @@ class SlideToActWidget extends StatelessWidget {
               );
               return Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => Homeview()
-                ),
+                MaterialPageRoute(builder: (context) => Recipet(trip: trip,)),
               );
             },
           ),
