@@ -36,7 +36,7 @@ class Recipet extends StatelessWidget {
                         Text(
                           "Booking Recipet",
                           style: TextStyle(
-                            fontSize: 32,
+                            fontSize: 33,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
